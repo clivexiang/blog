@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>@yield('title', 'Sample App') - Laravel 入门教程</title>
+    <title>@yield('title', 'myapp') - myapp</title>
     <link rel="stylesheet" href="/css/app.css">
   </head>
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
+    <!-- <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
         <div class="col-md-offset-1 col-md-10">
-          <a href="{{route('home')}}" id="logo">aotu</a>
+          <a href="/" id="logo">aotu</a>
           <nav>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="{{ route('help') }}">帮助</a></li>
+
+              <li><a href="/help">帮助</a></li>
               <li><a href="#">登录</a></li>
             </ul>
           </nav>
         </div>
       </div>
-    </header>
+    </header> -->
+   @include('layouts._vheader')
 
     <div class="container">
+ <div class="col-md-offset-1 col-md-10">
+      @include('shared._messages')
       @yield('content')
-      @include('layouts._footer')
+       @include('layouts._vfooter')
+        </div>
     </div>
   </body>
 </html>
