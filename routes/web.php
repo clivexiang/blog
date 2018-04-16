@@ -19,3 +19,7 @@ Route::get('signup', 'UsersController@create')->name('signup');
 
 Route::resource('users', 'UsersController');
 Route::get('/bce1', 'bceApi\BceRController@show');
+
+Route::get('login', 'SessionsController@create')->name('login');
+Route::post('login', 'SessionsController@store')->name('login');
+Route::delete('logout', 'SessionsController@destroy')->name('logout');
